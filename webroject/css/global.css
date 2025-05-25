@@ -39,7 +39,8 @@ body:not(header) {
 
 header {
   display: flex;
-  align-items: flex-end;
+  align-items: center; 
+  justify-content: space-between;
   width: 100%;
   padding: 15px 30px;
   background-image: var(--bg-img);

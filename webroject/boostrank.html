@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="ru" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Буст звания</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/boostrank.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <a href="index.html"><div class="logo"></div></a>
+    <nav>
+      <ul>
+        <li><a href="about.html">О нас</a></li>
+        <li><a href="services.html">Услуги</a></li>
+        <li><a href="order.html">Как заказать</a></li>
+        <li><a href="cost.html">Отзывы</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </nav>
+    <div class="theme">
+      <select id="theme-selector">
+        <option value="light">Светлая тема</option>
+        <option value="dark">Темная тема</option>
+      </select>
+      <button id="reset-theme">Сбросить тему</button>
+    </div>
+  </header>
+  <main>
+    <div class="top">
+      <h2 class="page-title">Буст звания</h2>
+      <a href="services.html" class="back-btn">Назад</a>
+    </div>
+    
+    <div class="rank-boost-container">
+      <!-- Левая колонка - текущее звание -->
+      <div class="rank-column current-rank">
+        <h3>Текущее звание</h3>
+        <div class="rank-selection">
+          <div class="rank-grid">
+            <div class="rank-group">
+              <img src="img/ranks/rank1.png" data-rank="1" class="rank-icon">
+              <img src="img/ranks/rank2.png" data-rank="2" class="rank-icon">
+              <img src="img/ranks/rank3.png" data-rank="3" class="rank-icon">
+              <img src="img/ranks/rank4.png" data-rank="4" class="rank-icon">
+              <img src="img/ranks/rank5.png" data-rank="5" class="rank-icon">
+              <img src="img/ranks/rank6.png" data-rank="6" class="rank-icon">
+            </div>
+            <div class="rank-group">
+              <img src="img/ranks/rank7.png" data-rank="7" class="rank-icon">
+              <img src="img/ranks/rank8.png" data-rank="8" class="rank-icon">
+              <img src="img/ranks/rank9.png" data-rank="9" class="rank-icon">
+              <img src="img/ranks/rank10.png" data-rank="10" class="rank-icon">
+              <img src="img/ranks/rank11.png" data-rank="11" class="rank-icon">
+              <img src="img/ranks/rank12.png" data-rank="12" class="rank-icon">
+            </div>
+            <div class="rank-group">
+              <img src="img/ranks/rank13.png" data-rank="13" class="rank-icon">
+              <img src="img/ranks/rank14.png" data-rank="14" class="rank-icon">
+              <img src="img/ranks/rank15.png" data-rank="15" class="rank-icon">
+              <img src="img/ranks/rank16.png" data-rank="16" class="rank-icon">
+              <img src="img/ranks/rank17.png" data-rank="17" class="rank-icon">
+              <img src="img/ranks/rank18.png" data-rank="18" class="rank-icon">
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Центральная часть - расчет -->
+      <div class="calculation-section">
+        <div class="rank-display">
+          <div class="selected-rank current-rank-display">
+            <img id="current-image" src="" class="hidden">
+            <p id="current-rank-name"></p>
+          </div>
+          <div class="arrow">→</div>
+          <div class="selected-rank desired-rank-display">
+            <img id="desired-image" src="" class="hidden">
+            <p id="desired-rank-name"></p>
+          </div>
+        </div>
+        <div class="map-display">
+          <img id="selected-map-image" src="" class="hidden">
+          <p id="selected-map-name"></p>
+        </div>
+        <button class="calculate-btn">Рассчитать стоимость</button>
+        <div class="result-container">
+          <p id="boostResult"></p>
+        </div>
+      </div>
+      
+      <!-- Правая колонка - желаемое звание -->
+      <div class="rank-column desired-rank">
+        <h3>Желаемое звание</h3>
+        <div class="rank-selection">
+          <div class="rank-grid">
+            <div class="rank-group">
+              <img src="img/ranks/rank1.png" data-rank="1" class="rank-icon">
+              <img src="img/ranks/rank2.png" data-rank="2" class="rank-icon">
+              <img src="img/ranks/rank3.png" data-rank="3" class="rank-icon">
+              <img src="img/ranks/rank4.png" data-rank="4" class="rank-icon">
+              <img src="img/ranks/rank5.png" data-rank="5" class="rank-icon">
+              <img src="img/ranks/rank6.png" data-rank="6" class="rank-icon">
+            </div>
+            <div class="rank-group">
+              <img src="img/ranks/rank7.png" data-rank="7" class="rank-icon">
+              <img src="img/ranks/rank8.png" data-rank="8" class="rank-icon">
+              <img src="img/ranks/rank9.png" data-rank="9" class="rank-icon">
+              <img src="img/ranks/rank10.png" data-rank="10" class="rank-icon">
+              <img src="img/ranks/rank11.png" data-rank="11" class="rank-icon">
+              <img src="img/ranks/rank12.png" data-rank="12" class="rank-icon">
+            </div>
+            <div class="rank-group">
+              <img src="img/ranks/rank13.png" data-rank="13" class="rank-icon">
+              <img src="img/ranks/rank14.png" data-rank="14" class="rank-icon">
+              <img src="img/ranks/rank15.png" data-rank="15" class="rank-icon">
+              <img src="img/ranks/rank16.png" data-rank="16" class="rank-icon">
+              <img src="img/ranks/rank17.png" data-rank="17" class="rank-icon">
+              <img src="img/ranks/rank18.png" data-rank="18" class="rank-icon">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Таблица выбора карт -->
+    <div class="maps-container">
+      <h3>Выберите карту</h3>
+      <div class="maps-grid">
+        <div class="map-item">
+          <img src="img/maps/1.webp" data-map="1" class="map-icon">
+          <span>Dust II</span>
+        </div>
+        <div class="map-item">
+          <img src="img/maps/2.webp" data-map="2" class="map-icon">
+          <span>Mirage</span>
+        </div>
+        <div class="map-item">
+          <img src="img/maps/3.webp" data-map="3" class="map-icon">
+          <span>Inferno</span>
+        </div>
+        <div class="map-item">
+          <img src="img/maps/4.webp" data-map="4" class="map-icon">
+          <span>Vertigo</span>
+        </div>
+        <div class="map-item">
+          <img src="img/maps/5.webp" data-map="5" class="map-icon">
+          <span>Train</span>
+        </div>
+        <div class="map-item">
+          <img src="img/maps/6.webp" data-map="6" class="map-icon">
+          <span>Anubis</span>
+        </div>
+        <div class="map-item">
+          <img src="img/maps/7.webp" data-map="7" class="map-icon">
+          <span>Ancient</span>
+        </div>
+        <div class="map-item">
+          <img src="img/maps/8.webp" data-map="8" class="map-icon">
+          <span>Overpass</span>
+        </div>
+        <div class="map-item">
+          <img src="img/maps/9.webp" data-map="9" class="map-icon">
+          <span>Nuke</span>
+        </div>
+        <div class="map-item">
+          <img src="img/maps/10.webp" data-map="10" class="map-icon">
+          <span>Jura Map</span>
+        </div>
+        <div class="map-item">
+          <img src="img/maps/11.webp" data-map="11" class="map-icon">
+          <span>Grail Map</span>
+        </div>
+        <div class="map-item">
+          <img src="img/maps/12.webp" data-map="12" class="map-icon">
+          <span>Agency Map</span>
+        </div>
+        <div class="map-item">
+          <img src="img/maps/13.webp" data-map="13" class="map-icon">
+          <span>Office</span>
+        </div>
+        <div class="map-item">
+          <img src="img/maps/14.webp" data-map="14" class="map-icon">
+          <span>Italy</span>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="js/boostrank.js"></script>
+</body>
+</html>
