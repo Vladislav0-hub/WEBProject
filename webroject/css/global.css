@@ -1,5 +1,5 @@
 :root  {
-  --hdr-img: url("../img/header/banner.jpg");
+  --hdr-img: url("../img/header/banner.png");
   --logo-img: url("../img/header/logo.jpg");
   --form-color: white;
 }
@@ -127,7 +127,7 @@ nav ul li a:hover {
   transition: transform 0.3s ease;
 }
 [data-theme="dark"] {
-  --hdr-img:  url("../img/header/bannerdark.jpg");
+  --hdr-img:  url("../img/header/bannerdark.png");
   --logo-img: url("../img/header/logodark.jpg");
   --form-color: #e0e0e0;
 }
