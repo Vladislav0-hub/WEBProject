@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ru" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Отзывы</title>
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/cost.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html"><div class="logo"></div></a>
+      <nav>
+        <ul>
+          <li><a href="about.html">О нас</a></li>
+          <li><a href="services.html">Услуги</a></li>
+          <li><a href="order.html">Инструкция</a></li>
+          <li><a href="cost.html">Отзывы</a></li>
+        </ul>
+      </nav>
+      <div class="theme-switcher">
+        <button class="theme-toggle" id="theme-toggle"></button>
+        <button class="reset-btn" id="reset-theme">Сброс</button>
+      </div>
+    </header>
+    <main>
+      <div class="top">
+        <h2>Отзывы</h2>
+        <a href="index.html">На главную страницу</a>
+      </div>
+      
+      <div class="reviews-container">
+        <!-- Пример отзыва -->
+        <div class="item active">
+          <div class="review-content">
+            <img class="review-avatar" src="img/global/ava.webp" alt="Аватар">
+            <h4 class="review-name">Чувак</h4>
+            <p class="review-rank">Silver II - Gold Nova I</p>
+            <p class="review-text">&#171;Спасибо за буст! Буду вас рекомендовать&#187;</p>
+          </div>
+        </div>
+        
+        <!-- Другие примеры отзывов -->
+        <div class="item">
+          <div class="review-content">
+            <img class="review-avatar" src="img/global/ava1.jpg" alt="Аватар">
+            <h4 class="review-name">donk</h4>
+            <p class="review-rank">Silver I - The Global Elite</p>
+            <p class="review-text">&#171;Я сам себе бустер&#187;</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="review-content">
+            <img class="review-avatar" src="img/global/ava2.jpg" alt="Аватар">
+            <h4 class="review-name">Райан Гослинг</h4>
+            <p class="review-rank">Silver I - Master Guardian Elite</p>
+            <p class="review-text">&#171;Сайт просто бомба, как я&#187;</p>
+          </div>
+        </div>
+        
+        <div class="slider-nav">
+          <button class="prev">Назад</button>
+          <button class="next">Вперед</button>
+        </div>
+      </div>
+      
+      <!-- Форма добавления отзыва -->
+      <div class="review-form">
+        <h3 class="form-title">Оставить отзыв</h3>
+        <form id="review-form">
+          <div class="form-group">
+            <label for="name">Ваше имя:</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="rank">Ваш звание (например: Silver 1 - Gold Nova II):</label>
+            <input type="text" id="rank" name="rank" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="comment">Ваш отзыв:</label>
+            <textarea id="comment" name="comment" required></textarea>
+          </div>
+          
+          <button type="submit" class="submit-btn">Отправить отзыв</button>
+        </form>
+      </div>
+    </main>
+    <script src="js/cost.js"></script>
+  </body>
+</html>

@@ -1,0 +1,233 @@
+:root {
+  --bg-clr: rgba(255, 255, 255, 0.9);
+  --text-blue-clr: #1e4086;
+  --text-lightblue-clr: #7097cb;
+  --text-gray-clr: whitesmoke;
+  --main-text-clr: #1e4086;
+  --bg-gray-clr: rgb(239, 146, 7);
+  --bg-image: url("../img/index/light-bg.jpg");
+  --button-bg: #1e4086;
+  --button-text: white;
+}
+
+[data-theme="dark"] {
+  --bg-clr: rgba(0, 0, 0, 0.85);
+  --text-blue-clr: #4a7eff;
+  --text-lightblue-clr: #a0c4ff;
+  --text-gray-clr: #e0e0e0;
+  --main-text-clr: #e0e0e0;
+  --bg-gray-clr: #1e4086;
+  --bg-image: url("../img/index/dark-bg.jpg");
+  --button-bg: #6c5ce7;
+  --button-text: #1a1a2e;
+}
+
+body {
+  background-image: var(--bg-image);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--bg-clr);
+  z-index: -1;
+}
+
+header {
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(30, 64, 134, 0.8);
+  backdrop-filter: blur(5px);
+}
+
+.logo {
+  width: 100px;
+  height: 90px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: var(--text-lightblue-clr);
+}
+
+.theme-switcher {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.theme-toggle {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  border-radius: 30px;
+  background-color: var(--button-bg);
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--button-text);
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .theme-toggle::after {
+  transform: translateX(30px);
+}
+
+.reset-btn {
+  padding: 8px 16px;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.reset-btn:hover {
+  background-color: white;
+  color: var(--button-bg);
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  padding: 1vw 2vw 0.5vw;
+  align-items: center;
+  min-height: calc(100vh - 100px);
+}
+
+main h1 .blue {
+  color: var(--text-blue-clr);
+  font-size: 4vw;
+}
+main h1 .lightblue {
+  color: var(--text-lightblue-clr);
+  font-size: 3vw;
+}
+main h1 .gray {
+  display: inline-block;
+  margin-top: 1vw;
+  padding: 5px 10px 10px;
+  border-radius: 20px;
+  background-color: var(--bg-gray-clr);
+  color: var(--text-gray-clr);
+  font-size: 2.5vw;
+}
+main .text {
+  max-width: 30vw;
+  margin-top: 1vw;
+  color: var(--main-text-clr);
+  font-size: 2vw;
+  font-weight: 700;
+}
+
+.right-image {
+  float: right;
+  margin-left: 3vw;
+  width: 30vw;
+  margin-top: -6%;
+  position: relative;
+  transition: transform 0.3s ease;
+  overflow-x: hidden;
+  border-radius: 20px; 
+}
+.right-image:hover {
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+  }
+  
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .theme-switcher {
+    margin-top: 15px;
+  }
+  
+  main {
+    flex-direction: column;
+    row-gap: 20px;
+    padding: 50px 25px 20px;
+    min-height: auto;
+  }
+
+  .right-image {
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  main h1 .blue {
+    font-size: 15vw;
+  }
+
+  main h1 .lightblue {
+    font-size: 10vw;
+  }
+
+  main h1 .gray {
+    padding: 3px 5px 5px;
+    border-radius: 10px;
+    font-size: 8vw;
+    margin-top: 3vw;
+  }
+
+  main .text {
+    max-width: 100%;
+    margin-top: 50px;
+    font-size: 7vw;
+  }
+}

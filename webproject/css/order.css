@@ -1,0 +1,282 @@
+/* Обновленные стили для header и темы (как в первом варианте) */
+header {
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(30, 64, 134, 0.8);
+  backdrop-filter: blur(5px);
+}
+
+.logo {
+  width: 100px;
+  height: 90px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #a0c4ff; /* Светло-голубой как в первом варианте */
+}
+
+.theme-switcher {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.theme-toggle {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  border-radius: 30px;
+  background-color: var(--button-bg);
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--button-text);
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .theme-toggle::after {
+  transform: translateX(30px);
+}
+
+.reset-btn {
+  padding: 8px 16px;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.reset-btn:hover {
+  background-color: white;
+  color: var(--button-bg);
+}
+
+/* Адаптивность (оставляем улучшенную версию) */
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+  }
+  
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .theme-switcher {
+    margin-top: 15px;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  nav ul li a {
+    padding: 10px 20px;
+  }
+}
+
+/* Все остальные стили остаются БЕЗ ИЗМЕНЕНИЙ */
+:root {
+  --bg-img: url("../img/global/art2.jpg");
+  --form-color: white;
+  --text-color: rgb(255, 255, 255);
+  --text-color2: rgb(0, 0, 0);
+  --behindtext-color: white;
+  --p-color: #000000;
+  --p-color2: #000000;
+  --h4-color: rgb(163, 252, 255);
+  --h44-color: black;
+  --back-btn-bg: #1e4086;
+  --back-btn-text: white;
+  --button-bg: #1e4086;
+  --button-text: white;
+}
+
+[data-theme="dark"] {
+  --bg-img: url("../img/dark/4.jpg");
+  --form-color: #e0e0e0;
+  --text-color: #e0e0e0;
+  --text-color2: rgb(255, 255, 255);
+  --behindtext-color: #1e4086;
+  --p-color: #000000;
+  --p-color2: #000000;
+  --h4-color: darkblue;
+  --h44-color: #e0e0e0;
+  --back-btn-bg: #6c5ce7;
+  --back-btn-text: #1a1a2e;
+  --button-bg: #6c5ce7;
+  --button-text: #1a1a2e;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: var(--bg-img);
+  filter: blur(4px);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+body {
+  background-image: var(--bg-img);
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  padding: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.top h2 {
+  padding: 12px 20px;
+  background-color: var(--form-color);
+  border-radius: 25px;
+  color: var(--p-color2);
+  font-size: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.top a {
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--back-btn-text);
+  padding: 10px 20px;
+  background-color: var(--back-btn-bg);
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.top a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.info {
+  margin-top: 15px;
+  padding: 20px;
+  background-color: var(--behindtext-color);
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.info h3 {
+  font-size: 1.8rem;
+  color: var(--text-color2);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--h4-color);
+}
+
+.info h4 {
+  color: var(--h44-color);
+  font-size: 1.2rem;
+  margin: 20px 0 10px;
+  padding: 10px 20px;
+  background-color: var(--h4-color);
+  border-radius: 30px;
+  display: inline-block;
+}
+
+.number {
+  color: lightcoral;
+  font-weight: bold;
+}
+
+.text-block {
+  width: 100%;
+  padding: 15px 20px;
+  margin: 10px 0;
+  border-radius: 15px;
+  background-color: var(--form-color);
+  color: var(--p-color);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@media screen and (max-width: 768px) {
+  .top {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .top h2 {
+    font-size: 1.2rem;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .info h3 {
+    font-size: 1.5rem;
+  }
+  
+  .info h4 {
+    font-size: 1.1rem;
+    padding: 8px 15px;
+  }
+  
+  .text-block {
+    padding: 12px 15px;
+    font-size: 0.9rem;
+  }
+}
