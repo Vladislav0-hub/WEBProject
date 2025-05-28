@@ -47,7 +47,6 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/dark/8.jpg');
 }
 
-/* Шапка (как в первом варианте) */
 header {
   padding: 15px 30px;
   display: flex;
@@ -139,7 +138,6 @@ nav ul li a:hover {
   color: var(--button-bg);
 }
 
-/* Основной контент */
 main {
   padding: 25px;
   max-width: 1200px;
@@ -195,7 +193,6 @@ main {
   color: var(--text-color);
 }
 
-/* Контейнер с выбором званий */
 .rank-boost-container {
   display: flex;
   justify-content: space-between;
@@ -281,7 +278,6 @@ main {
   box-shadow: 0 0 10px rgba(108, 92, 231, 0.3);
 }
 
-/* Отображение выбранных званий */
 .rank-display {
   display: flex;
   align-items: flex-end;
@@ -325,7 +321,6 @@ main {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-/* Выбранная карта */
 .map-display {
   display: flex;
   flex-direction: column;
@@ -348,7 +343,6 @@ main {
   font-weight: 500;
 }
 
-/* Кнопка расчета */
 .calculate-btn {
   background-color: var(--button-bg);
   color: var(--button-text);
@@ -378,7 +372,6 @@ main {
   width: 100%;
 }
 
-/* Выбор карт */
 .maps-container {
   max-width: 1200px;
   margin: 30px auto;
@@ -442,7 +435,6 @@ main {
   font-weight: 500;
 }
 
-/* Анимации */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
@@ -457,7 +449,6 @@ main {
   animation: fadeIn 0.3s ease-out;
 }
 
-/* Улучшенная адаптивность */
 @media (max-width: 1200px) {
   .maps-grid {
     grid-template-columns: repeat(5, 1fr);
@@ -593,4 +584,5 @@ main {
   .map-item span {
     font-size: 0.8rem;
   }
+  
 }

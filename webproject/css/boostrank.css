@@ -47,7 +47,6 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/dark/8.jpg');
 }
 
-/* Шапка (как в первом варианте) */
 header {
   padding: 15px 30px;
   display: flex;
@@ -457,7 +456,6 @@ main {
   animation: fadeIn 0.3s ease-out;
 }
 
-/* Улучшенная адаптивность */
 @media (max-width: 1200px) {
   .maps-grid {
     grid-template-columns: repeat(5, 1fr);
@@ -593,4 +591,57 @@ main {
   .map-item span {
     font-size: 0.8rem;
   }
+
+}
+/* Стили для формы заказа */
+.order-table {
+  width: 100%;
+  margin: 15px 0;
+  border-collapse: collapse;
+}
+
+.order-input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--card-bg);
+  color: var(--text-color);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.order-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 8px rgba(108, 92, 231, 0.3);
+}
+
+.submit-order-btn {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.submit-order-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#order-success {
+  color: var(--success-color);
+  font-weight: 600;
+  text-align: center;
+  margin-top: 10px;
+  animation: fadeIn 0.5s ease-out;
 }

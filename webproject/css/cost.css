@@ -3,8 +3,8 @@
   --p-color: #1e4086;
   --p-color2:rgb(0, 0, 0);
   --form-color: white;
-  --behindtext-color: white;
-  --bg-color-card: whitesmoke;
+  --behindtext-color: rgba(255, 165, 0, 0.85);;
+  --bg-color-card: rgba(255, 165, 0, 0.85);;
   --border-color: lightgrey;
   --name-color: blue;
   --boostprg-color: midnightblue;
@@ -42,7 +42,7 @@
   --button-text: #1a1a2e;
 }
 
-/* Общие стили */
+/* Общаг */
 body::before {
   content: "";
   position: fixed;
@@ -69,7 +69,6 @@ body {
   min-height: 100vh;
 }
 
-/* Стили для header (как в первом варианте) */
 header {
   padding: 15px 30px;
   display: flex;
@@ -161,7 +160,7 @@ nav ul li a:hover {
   color: var(--button-bg);
 }
 
-/* Основной контент */
+/* Основа */
 main {
   padding: 25px;
   max-width: 1200px;
@@ -201,7 +200,7 @@ main {
   box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
 
-/* Стили для слайдера отзывов */
+/* Стили для листания отзывов */
 .reviews-container {
   position: relative;
   margin: 40px auto;
@@ -263,7 +262,7 @@ main {
   margin: 0 auto;
 }
 
-/* Навигация слайдера */
+/* Навигация  */
 .slider-nav {
   display: flex;
   justify-content: center;
@@ -290,7 +289,7 @@ main {
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-/* Форма добавления отзыва */
+/* Форма для  отзыва */
 .review-form {
   margin-top: 50px;
   padding: 30px;
@@ -355,7 +354,7 @@ main {
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-/* Уведомление об успешной отправке */
+/* Уведомленение  */
 .notification {
   position: fixed;
   top: 20px;
@@ -375,7 +374,7 @@ main {
   transform: translateX(0);
 }
 
-/* Адаптация для мобильных */
+/* Адаптация для мобилки */
 @media screen and (max-width: 768px) {
   header {
     flex-direction: column;

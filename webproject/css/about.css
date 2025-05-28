@@ -293,7 +293,7 @@ p {
   color: var(--button-bg);
 }
 
-/* Адаптация для мобильных */
+/* Адаптация для теле */
 @media screen and (max-width: 768px) {
   .theme-switcher {
     flex-direction: row;

@@ -53,7 +53,33 @@ const rankPrices = {
 document.addEventListener('DOMContentLoaded', function() {
   initRankSelection();
   initThemeSelector();
+  initOrderForm();
 });
+
+// Инициализация формы заказа
+function initOrderForm() {
+  document.getElementById('submit-order').addEventListener('click', function() {
+    const email = document.getElementById('user-email').value;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+    if (!emailRegex.test(email)) {
+      alert('Пожалуйста, введите корректный email');
+      return;
+    }
+    
+    // Здесь можно добавить код для отправки данных на сервер
+    
+    // Показываем сообщение об успехе
+    document.getElementById('order-success').classList.remove('hidden');
+    document.getElementById('order-success').classList.add('show');
+    
+    // Скрываем форму
+    document.getElementById('order-form').classList.add('hidden');
+    
+    // Очищаем поле
+    document.getElementById('user-email').value = '';
+  });
+}
 
 // Обработка выбора званий и карт
 function initRankSelection() {
@@ -196,20 +222,27 @@ function showResult(message, isError = false) {
   setTimeout(() => {
     resultElement.classList.add('show');
   }, 10);
+  
+  // Показываем форму только если нет ошибки
+  if (!isError) {
+    const orderForm = document.getElementById('order-form');
+    orderForm.classList.remove('hidden');
+    orderForm.classList.add('show');
+    
+    // Скрываем сообщение об успехе, если оно было показано ранее
+    document.getElementById('order-success').classList.add('hidden');
+  }
 }
 
-// Управление темой - обновленная версия
 function initThemeSelector() {
   const themeToggle = document.getElementById('theme-toggle');
   const resetThemeBtn = document.getElementById('reset-theme');
 
-  // Проверяем сохраненную тему
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme) {
     document.documentElement.setAttribute('data-theme', savedTheme);
   }
 
-  // Обработчик переключения темы
   themeToggle.addEventListener('click', function() {
     const currentTheme = document.documentElement.getAttribute('data-theme');
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
@@ -217,7 +250,6 @@ function initThemeSelector() {
     localStorage.setItem('theme', newTheme);
   });
   
-  // Обработчик сброса темы
   resetThemeBtn.addEventListener('click', function() {
     document.documentElement.removeAttribute('data-theme');
     localStorage.removeItem('theme');

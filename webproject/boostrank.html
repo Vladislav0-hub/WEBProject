@@ -22,15 +22,14 @@
       </ul>
     </nav>
     <div class="theme-switcher">
-  <button class="theme-toggle" id="theme-toggle"></button>
-  <button class="reset-btn" id="reset-theme">Сброс</button>
-</div>
+      <button class="theme-toggle" id="theme-toggle"></button>
+      <button class="reset-btn" id="reset-theme">Сброс</button>
+    </div>
   </header>
   <main>
     <div class="top">
       <a href="services.html" class="back-btn">Назад</a>
       <h2></h2>
-      
     </div>
     
     <div class="rank-boost-container">
@@ -87,6 +86,19 @@
         <button class="calculate-btn">Рассчитать стоимость</button>
         <div class="result-container">
           <p id="boostResult"></p>
+        </div>
+        
+        <!-- Добавленная форма заказа -->
+        <div id="order-form" class="hidden">
+          <table class="order-table">
+            <tr>
+              <td>
+                <input type="email" id="user-email" class="order-input" placeholder="Ваш email" required>
+              </td>
+            </tr>
+          </table>
+          <button id="submit-order" class="submit-order-btn">Отправить заявку</button>
+          <p id="order-success" class="hidden">Успешно, с вами свяжутся через 15м</p>
         </div>
       </div>
       

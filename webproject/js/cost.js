@@ -1,15 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // Инициализация слайдера отзывов
+  // Инициализация листания
   initReviewsSlider();
   
-  // Инициализация переключения тем
+  // Инициализация перек
   initThemeSwitcher();
   
-  // Инициализация формы добавления отзыва
   initReviewForm();
 });
 
-// Слайдер отзывов
+// листание отзывов
 function initReviewsSlider() {
   const items = document.querySelectorAll(".item");
   const prevBtn = document.querySelector(".prev");
@@ -38,10 +37,10 @@ function initReviewsSlider() {
   if (nextBtn) nextBtn.addEventListener("click", nextSlide);
   if (prevBtn) prevBtn.addEventListener("click", prevSlide);
 
-  // Автопрокрутка каждые 5 секунд
+  // Автопрокрутка 5 сек
   let slideInterval = setInterval(nextSlide, 5000);
 
-  // Остановка автопрокрутки при наведении
+  // Остановка автопрокрутки при авердение
   const slider = document.querySelector('.reviews-container');
   if (slider) {
     slider.addEventListener('mouseenter', () => clearInterval(slideInterval));
@@ -59,13 +58,12 @@ function initThemeSwitcher() {
   const themeToggle = document.getElementById('theme-toggle');
   const resetThemeBtn = document.getElementById('reset-theme');
 
-  // Проверяем сохраненную тему
+  // Проверка темы
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme) {
     document.documentElement.setAttribute('data-theme', savedTheme);
   }
 
-  // Обработчик переключения темы
   if (themeToggle) {
     themeToggle.addEventListener('click', function() {
       const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
@@ -75,7 +73,6 @@ function initThemeSwitcher() {
     });
   }
 
-  // Обработчик сброса темы
   if (resetThemeBtn) {
     resetThemeBtn.addEventListener('click', function() {
       document.documentElement.setAttribute('data-theme', 'light');
@@ -84,7 +81,7 @@ function initThemeSwitcher() {
   }
 }
 
-// Форма добавления отзыва
+// Функциядобавления отзыва
 function initReviewForm() {
   const form = document.getElementById('review-form');
   
@@ -120,28 +117,28 @@ function initReviewForm() {
     // Очищаем форму
     form.reset();
     
-    // Показываем уведомление
+    // Показываем уведом
     showNotification('Спасибо за ваш отзыв!', true);
     
-    // Показываем новый отзыв
+    // Показываем новый от
     const items = document.querySelectorAll('.item');
     showSlide(items.length - 1);
   });
 }
 
-// Функция показа уведомления
+// Функция  уведомления
 function showNotification(message, isSuccess) {
   const notification = document.createElement('div');
   notification.className = `notification ${isSuccess ? 'success' : 'error'}`;
   notification.textContent = message;
   document.body.appendChild(notification);
   
-  // Показываем уведомление
+  // уведомление
   setTimeout(() => {
     notification.classList.add('show');
   }, 10);
   
-  // Скрываем через 3 секунды
+  // 3 секунды
   setTimeout(() => {
     notification.classList.remove('show');
     setTimeout(() => {
